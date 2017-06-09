@@ -3,33 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <script src="EqualSidesOfAnArray.js"></script>
+
 </head>
 <body>
    <script>
-       var param = [1,2,3,4,3,2,1];
+       var param = [99,2,7,4,5,2,55, 8, 77, 3, 41, 24, 15, 13]; //example array
        
-       function bench (f) {
+       function bench (f) {     // returns time, needed to launch function 1k times
     var startTime = new Date();
     for (var i = 0; i < 1000; i++) f(param);
     return new Date() - startTime;
 }
-var timeIn = 0;
-var timeOut = 0;
-for (var i=0; i < 1001; i++) {
-    timeIn += bench(findEvenIndex); 
-    timeOut += bench(findEvenIndex2);
+		 /* our comparable functions below*/
+		 function sortArray(array) {
+			 const odd = array.filter((x) => x % 2).sort((a,b) => b - a);
+			 return array.map((x) => x % 2 ? odd.pop() : x);
+		 }
+		 
+		 function sortArray2(array) {
+			 const odd = array.filter((x) => x % 2).sort((a,b) => a - b);
+			 return array.map((x) => x % 2 ? odd.shift() : x);
+		 }	 
+		 
+		 
+		 
+var time1 = 0;
+var time2 = 0;
+		 /*does bench() with each our comparable functions 1001 times */
+for (var i=0; i < 1001; i++) {    
+    time1 += bench(sortArray); 
+    time2 += bench(sortArray2);
 }
-console.log(timeIn + " ms");
-console.log(timeOut + " ms");
+console.log(time1 + " ms");
+console.log(time2 + " ms");
        
-    /*console.log(performance.now());
-       
-       for (var i = 0; i <1000; i++) {
-           findEvenIndex();
-       }
-    
-    console.log(performance.now());*/
     </script>
     
     
