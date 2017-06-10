@@ -3,15 +3,15 @@ function shortestArrang(n) {
 	// n%3 3
 	//n/2 odd 4   (10)-[4, 3, 2, 1]); (14)-[5, 4, 3, 2]);
 	// n%5  5
-	// no 6 10 14 18 22 26 30 34 38 42 46 50 bcs [] of 6 is odd
-	// n%7  is 4 wi=hich is central unit [7, 6, 5, //4, 3, 2, 1]
+	// no 6 10 14 18 22 26 30 34 38 42 46 50 bcs [] of  is odd
+	// n%7   central unit [7, 6, 5, //4, 3, 2, 1]
 	// for 8 /4 odd ??    [9, 8, 7, 6, 5, 4, 3, 2]
 	//n%9 [12, 11, 10, 9, 8, 7, 6, 5, 4]   
-	// no 10 bcs [] of 10 is odd
+	//
 	// n%11 [13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3]  88 
 	//13 [13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]  91
 	
-	// 24 / 8 odd ?? 
+	// 24 / 8 odd 
 
 	
 	function createArr(center, qty) {
